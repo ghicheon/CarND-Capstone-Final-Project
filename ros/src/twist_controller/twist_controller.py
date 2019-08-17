@@ -32,7 +32,6 @@ class Controller(object):
         self.decel_limit = decel_limit
         self.accel_limit = accel_limit
         self.wheel_radius = wheel_radius
-        
         self.last_time = rospy.get_time()
 
     def control(self, current_vel, curr_ang_vel, linear_vel, angular_vel, dbw_enabled):
