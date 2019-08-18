@@ -7,13 +7,20 @@ import rospy
 GAS_DENSITY = 2.858
 ONE_MPH= 0.44704
 
+#to drive slowly when start. if not, sometimes the car miss the traffic light.
+BASE_VEL=0.6
+throttle_for_slowstart = [BASE_VEL ,BASE_VEL*2 ,BASE_VEL*3 ,BASE_VEL*4 ,BASE_VEL*5]
+
 
 class Controller(object):
     def __init__(self, vehicle_mass,fuel_capacity, brake_deadband, decel_limit, 
                  accel_limit, wheel_radius, wheel_base, steer_ratio, max_lat_accel, max_steer_angle):
         
-        kp = 0.3
-        ki = 0.01
+        #FOPDT(first order plus dead-time model is used.
+        #Tuning is done using IMC(Internal Model Control) 
+        kp=0.5      
+        ki=kp/8.0
+
         kd = 0.0
         mn = 0. #Minimum throttle value
         mx = 0.5 #Maximum throttle value
@@ -65,5 +72,11 @@ class Controller(object):
             throttle = 0.0
             decel = max(vel_error, self.decel_limit)
             brake = abs(decel) * (self.vehicle_mass + GAS_DENSITY * self.fuel_capacity) * self.wheel_radius
-        
+
+        # current_vel is m/s. therefore 5m/s is around 20 km/h
+        vel_idx = int(current_vel)
+        if vel_idx < 5 :    
+            limit  = throttle_for_slowstart[vel_idx]
+            throttle = limit if current_vel > limit else current_vel
+
         return throttle, brake, steering
