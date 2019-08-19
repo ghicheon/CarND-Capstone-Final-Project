@@ -8,8 +8,8 @@ GAS_DENSITY = 2.858
 ONE_MPH= 0.44704
 
 #to drive slowly when start. if not, sometimes the car miss the traffic light.
-BASE_VEL=0.6
-throttle_for_slowstart = [BASE_VEL ,BASE_VEL*2 ,BASE_VEL*3 ,BASE_VEL*4 ,BASE_VEL*5]
+BASE_VEL=0.3
+throttle_for_slowstart = [BASE_VEL ,BASE_VEL*2 ,BASE_VEL*3 ,BASE_VEL*4 ,BASE_VEL*5,BASE_VEL*6,BASE_VEL*7]
 
 
 class Controller(object):
@@ -66,7 +66,7 @@ class Controller(object):
         
         if linear_vel == 0 and current_vel < 0.1:
             throttle = 0.0
-            brake = 400
+            brake = 450
             
         elif throttle < 0.1 and vel_error < 0:
             throttle = 0.0
@@ -75,7 +75,7 @@ class Controller(object):
 
         # current_vel is m/s. therefore 5m/s is around 20 km/h
         vel_idx = int(current_vel)
-        if vel_idx < 5 :    
+        if vel_idx < 7 :    
             limit  = throttle_for_slowstart[vel_idx]
             throttle = limit if current_vel > limit else current_vel
 

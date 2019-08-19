@@ -12,8 +12,6 @@ class PID(object):
 
         self.int_val = self.last_error = 0.
 
-        self.last_val = VAL_INIT
-
         #conditional integral
         self.integral_on = True
 
@@ -33,8 +31,6 @@ class PID(object):
         else:
             val = self.kp * error + self.kd * derivative;
             
-        self.last_val = val
-
         saturated = True
         if val > self.max:
             val = self.max
