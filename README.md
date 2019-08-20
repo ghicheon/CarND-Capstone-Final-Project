@@ -9,14 +9,19 @@ Venkat	      :vkarramr@mtu.edu
 
 ## Contribution
 Ghicheon Lee: Lead, pid controller tunning using FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.           
+
 Elle Li	    :     
+
 Haiqi Bian  :      
+
 David Göndör:      
+
 Venkat	     :     
 
 
 
 
+-------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
 
 
