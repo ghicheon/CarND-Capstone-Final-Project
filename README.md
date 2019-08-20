@@ -1,14 +1,14 @@
 #  Late Start But Best Team
 
 ## team organization
-Ghicheon Lee : gebmania@gmail.com               
-Elle Li	      :zheyuanli99@gmail.com	Elle	     
-Haiqi Bian     : bingo_hiqi@live.cn			     
+Ghicheon Lee  : gebmania@gmail.com               
+Elle Li	      :zheyuanli99@gmail.com      
+Haiqi Bian    : bingo_hiqi@live.cn			     
 David Göndör: gondordavid@gmail.com	     
 Venkat	      :vkarramr@mtu.edu			     
 
 ## Contribution
-Ghicheon Lee:          
+Ghicheon Lee: Lead, pid controller tunning using FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.           
 Elle Li	    :     
 Haiqi Bian  :      
 David Göndör:      
