@@ -18,15 +18,15 @@ Venkat	      :vkarramr@mtu.edu
 * Publish throttle, steering, and brake commands at 50hz.
 
 ## Contribution
-Ghicheon Lee: Lead, pid controller tunning using FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.           
+* Ghicheon Lee: Lead, pid controller tunning using FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.           
 
-Elle Li	    :     
+* Elle Li	    :     
 
-Haiqi Bian  :      
+* Haiqi Bian  :      
 
-David Göndör:      
+* David Göndör:      
 
-Venkat	     :     
+* Venkat	     :     
 
 
 
