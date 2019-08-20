@@ -18,19 +18,19 @@ Venkat	      :vkarramr@mtu.edu
 * Publish throttle, steering, and brake commands at 50hz.
 
 ## Contributions
-# Traffic light detector (Elle Li)
+### Traffic light detector (Elle Li)
 detail..... blah blah, blah~~~  
 
-# Traffic light classifier (Haiqi Bian)   
+### Traffic light classifier (Haiqi Bian)   
 detail..... blah blah, blah~~~   
 
-#  DBW node     (David Göndör)
+###  DBW node     (David Göndör)
 detail..... blah blah, blah~~~   
 
-# Waypoint updater  (Venkat)
+### Waypoint updater  (Venkat)
 detail..... blah blah, blah~~~   
 
-# pid controller tunning (Ghicheon Lee)
+### pid controller tunning (Ghicheon Lee)
 FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.     
 .......................
 
