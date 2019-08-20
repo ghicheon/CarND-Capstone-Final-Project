@@ -2,7 +2,7 @@
 
 
 ## team organization
-Ghicheon Lee  : gebmania@gmail.com               
+Ghicheon Lee  : gebmania@gmail.com   - Team Lead         
 Elle Li	      :zheyuanli99@gmail.com      
 Haiqi Bian    : bingo_hiqi@live.cn			     
 David Göndör: gondordavid@gmail.com	     
@@ -18,31 +18,19 @@ Venkat	      :vkarramr@mtu.edu
 * Publish throttle, steering, and brake commands at 50hz.
 
 ## Contribution
-* Ghicheon Lee: Lead, pid controller tunning using FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.           
+# Elle Li	    : Traffic light detector  
+detail..... blah blah, blah~~~  
 
-* Elle Li	    :     
+# Haiqi Bian  : Traffic light classifier    
+detail..... blah blah, blah~~~   
 
-* Haiqi Bian  :      
+# David Göndör: DBW node     
+detail..... blah blah, blah~~~   
 
-* David Göndör:      
+# Venkat	     : waypoint updater  
+detail..... blah blah, blah~~~   
 
-* Venkat	     :     
-
-
-
-
-
-## Detailed Description
-
-### Traffic light detector (Elle Li)   
-
-### Traffic light classifier(Haiqi Bian)   
-
-### DBW Node ( David)   
-
-### waypoint updater (Venkat)   
-
-### PID Tunning using FOPDT,IMC   (Ghicheon Lee)  
+# Ghicheon Lee: Lead, pid controller tunning using FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.     
 
 
 -------------------------------------------------------------------------------------------------------------
