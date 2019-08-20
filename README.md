@@ -34,15 +34,15 @@ Venkat	     :
 
 ## Detailed Description
 
-# Traffic light detector (Elle Li)   
+### Traffic light detector (Elle Li)   
 
-# Traffic light classifier(Haiqi Bian)   
+### Traffic light classifier(Haiqi Bian)   
 
-# DBW Node ( David)   
+### DBW Node ( David)   
 
-# waypoint updater (Venkat)   
+### waypoint updater (Venkat)   
 
-# PID Tunning using FOPDT,IMC   (Ghicheon Lee)  
+### PID Tunning using FOPDT,IMC   (Ghicheon Lee)  
 
 
 -------------------------------------------------------------------------------------------------------------
