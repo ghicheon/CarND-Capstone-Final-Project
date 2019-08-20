@@ -17,20 +17,22 @@ Venkat	      :vkarramr@mtu.edu
 * Stop and restart PID controllers depending on the state of /vehicle/dbw_enabled.
 * Publish throttle, steering, and brake commands at 50hz.
 
-## Contribution
-# Elle Li	    : Traffic light detector  
+## Contributions
+# Traffic light detector (Elle Li)
 detail..... blah blah, blah~~~  
 
-# Haiqi Bian  : Traffic light classifier    
+# Traffic light classifier (Haiqi Bian)   
 detail..... blah blah, blah~~~   
 
-# David Göndör: DBW node     
+#  DBW node     (David Göndör)
 detail..... blah blah, blah~~~   
 
-# Venkat	     : waypoint updater  
+# Waypoint updater  (Venkat)
 detail..... blah blah, blah~~~   
 
-# Ghicheon Lee: Lead, pid controller tunning using FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.     
+# pid controller tunning (Ghicheon Lee)
+FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.     
+.......................
 
 
 -------------------------------------------------------------------------------------------------------------
