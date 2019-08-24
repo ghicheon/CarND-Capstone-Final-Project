@@ -25,7 +25,7 @@ detail..... blah blah, blah~~~
 detail..... blah blah, blah~~~   
 
 ###  DBW node     (David Göndör)
-detail..... blah blah, blah~~~   
+Made the dbw node to subcribe to the /twist_cmd and use various controllers to provide appropriate throttle, brake, and steering commands.  
 
 ### Waypoint updater  (Venkat)
 detail..... blah blah, blah~~~   
