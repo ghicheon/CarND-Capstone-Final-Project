@@ -1,4 +1,4 @@
-#  Late Start But Best Team
+# Late Start But Best Team
 
 
 ## team organization
@@ -21,8 +21,16 @@ Venkat	      :vkarramr@mtu.edu
 ### Traffic light detector (Elle Li)
 detail..... blah blah, blah~~~  
 
-### Traffic light classifier (Haiqi Bian)   
-detail..... blah blah, blah~~~   
+### Traffic light classifier (Haiqi Bian)
+Training the classification by using SSD Inception V2 Coco. There are 2 training results, but only difference is the training batch size. The `.pd` files are located at following path:
+
+* for udacity-simulator (./ros/src/tl_detector/light_classification/model/sim):
+  * ./8_batch/frozen_inference_graph.pb
+  * ./24_batch/frozen_inference_graph.pb
+* for udacity parking lot (./ros/src/tl_detector/light_classification/model/real):
+  * ./8_batch/frozen_inference_graph.pb
+  
+The path needs to be updated in the traffic light detector part.
 
 ###  DBW node     (David Göndör)
 Made the dbw node to subcribe to the /twist_cmd and use various controllers to provide appropriate throttle, brake, and steering commands.  
