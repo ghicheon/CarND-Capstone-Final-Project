@@ -42,7 +42,7 @@ Made the dbw node to subcribe to the /twist_cmd and use various controllers to p
 detail..... blah blah, blah~~~   
 
 ### pid controller tunning (Ghicheon Lee)
-FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.     
+FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model was considered but not used(https://github.com/ghicheon/code_snippets).     
 
 
 I modified code like following in order to measure FOPDT parameters.              
