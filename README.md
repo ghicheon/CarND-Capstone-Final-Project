@@ -47,22 +47,23 @@ FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model
 
 I modified code like following in order to measure FOPDT parameters.              
 
-There is no speed limit           
--------------------------------------------        
+* There is no speed limit           
+```bash    
 waypoint_loader.launch           
       <param name="velocity" value="100" />          
---------------------------------------------         
+```     
 
          
-throttle is always 30%.           
--------------------------------------------------------------          
+* throttle is always 30%.           
+```bash     
 twist_controller.py       
    def control(self, current_vel, curr_ang_vel, linear_vel, angular_vel, dbw_enabled):        
         throttle = 0.3      
         brake = 0      
         ...        
-        return throttle, brake, steering          
--------------------------------------------------------------         
+        return throttle, brake, steering     
+```
+       
  
             
 #### FOPDT parameters       
