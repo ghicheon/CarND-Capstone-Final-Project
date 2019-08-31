@@ -42,6 +42,9 @@ detail..... blah blah, blah~~~
 FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.     
 .......................
 
+I just wanna say...
+"There is a difference between knowing the path and walking the path." – Morpheus(The Matrix 1999)
+
 
 -------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------
