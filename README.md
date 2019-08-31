@@ -43,7 +43,47 @@ detail..... blah blah, blah~~~
 
 ### pid controller tunning (Ghicheon Lee)
 FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model is considered.     
-.......................
+
+
+I modified code like following in order to measure FOPDT parameters.
+
+There is no speed limit
+-------------------------------------------
+waypoint_loader.launch
+      <param name="velocity" value="100" />
+--------------------------------------------
+
+
+throttle is always 30%.
+-------------------------------------------------------------
+twist_controller.py
+   def control(self, current_vel, curr_ang_vel, linear_vel, angular_vel, dbw_enabled):
+        throttle = 0.3
+        brake = 0
+        ...
+        return throttle, brake, steering
+-------------------------------------------------------------
+
+
+#### FOPDT parameters
+kp = dy/du = 16/30
+dy: the maximum speed (m/s) with du   => 16 m/s
+du: the throttle %                               => 30%
+
+The maximum speed is 35.84 miles/hour. it's 57.67 km/hour. it's also 16 meters/second
+The throttle was 30%
+
+theta_p = 0
+How long does it take the car to response. It must be close to 0 in modern cars.
+
+tau_p = 10
+How long does it take the car to reach the 63% of the maximum speed.
+
+35.84 * 0.63 = 22.57 miles/hour
+
+I measured the time to reach 22.57 MPH.  it was 10 seconds.
+
+
 
 I just wanna say...
 "There is a difference between knowing the path and walking the path." – Morpheus(The Matrix 1999)
