@@ -67,17 +67,17 @@ twist_controller.py
  
             
 #### FOPDT parameters       
-kp = dy/du = 16/30       
+* kp = dy/du = 16/30       
 dy: the maximum speed (m/s) with du   => 16 m/s       
 du: the throttle %                               => 30%       
      
 The maximum speed is 35.84 miles/hour. it's 57.67 km/hour. it's also 16 meters/second      
 The throttle is 30%         
              
-theta_p = 0
+* theta_p = 0
 How long does it take the car to response. It must be close to 0 in modern cars.       
    
-tau_p = 10                
+* tau_p = 10                
 How long does it take the car to reach the 63% of the maximum speed.         
       
 35.84 * 0.63 = 22.57 miles/hour       
@@ -85,7 +85,8 @@ How long does it take the car to reach the 63% of the maximum speed.
 I measured the time to reach 22.57 MPH.  it was 10 seconds.       
 
             
-
+         
+         
 I just wanna say...           
 "There is a difference between knowing the path and walking the path." – Morpheus(The Matrix 1999)         
         
