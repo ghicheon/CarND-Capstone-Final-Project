@@ -113,7 +113,6 @@ class WaypointUpdater(object):
     def pose_cb(self, msg):
         self.pose = msg
         # TODO: Implement
-        pass
 
     def waypoints_cb(self, waypoints):
         self.base_waypoints = waypoints
@@ -121,16 +120,14 @@ class WaypointUpdater(object):
             self.waypoints_2d = [[waypoint.pose.pose.position.x, waypoint.pose.pose.position.y] for waypoint in waypoints.waypoints]
             self.waypoint_tree = KDTree(self.waypoints_2d)
         # TODO: Implement
-        pass
 
     def traffic_cb(self, msg):
         # TODO: Callback for /traffic_waypoint message. Implement
         self.stopline_wp_idx = msg.data
-        pass
 
     def obstacle_cb(self, msg):
         # TODO: Callback for /obstacle_waypoint message. We will implement it later
-        pass
+	pass
 
     def get_waypoint_velocity(self, waypoint):
         return waypoint.twist.twist.linear.x

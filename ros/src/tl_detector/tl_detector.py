@@ -56,8 +56,8 @@ class TLDetector(object):
         self.last_wp = -1
         self.state_count = 0
 
-        self.waypoints_2d=[[99999999,9999999]] #XXX type error workaround...
-        self.waypoint_tree = KDTree(self.waypoints_2d) #XXX type error workaround...
+        self.waypoints_2d=[[99999999,9999999]] #type error workaround...
+        self.waypoint_tree = KDTree(self.waypoints_2d) 
 
         rospy.spin()
 
@@ -87,8 +87,8 @@ class TLDetector(object):
         self.camera_image = msg
         light_wp, state = self.process_traffic_lights()
         
-        if dbg_cnt < 3: 
-            sys.stderr.write("image_cb called(state:" + str(state) + ")\n" )
+        if dbg_cnt < 1: 
+            sys.stderr.write("image_cb called(just for checking if it works)")
         dbg_cnt += 1
 	
 
@@ -134,9 +134,8 @@ class TLDetector(object):
             int: ID of traffic light color (specified in styx_msgs/TrafficLight)
 
         """
-        #for testing..............
+        #just for testing.
         return light.state
-
 
         #XXXXX  if(not self.has_image):
         #XXXXX     self.prev_light_loc = None
