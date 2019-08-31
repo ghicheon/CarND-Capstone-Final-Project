@@ -42,7 +42,10 @@ Made the dbw node to subcribe to the /twist_cmd and use various controllers to p
 detail..... blah blah, blah~~~   
 
 ### pid controller tunning (Ghicheon Lee)
-FOPDT(first order plus dead-time model) ,IMC(Internal Model Control).  MPC model was considered but not used(https://github.com/ghicheon/code_snippets).     
+Conditional integral is applied to PID controller.
+FOPDT(first order plus dead-time model) parameters were found.
+IMC(Internal Model Control) tunning is used.
+MPC model was considered (https://github.com/ghicheon/code_snippets) but not used because it's too slow in python.        
 
 
 I modified code like following in order to measure FOPDT parameters.              
@@ -85,7 +88,30 @@ How long does it take the car to reach the 63% of the maximum speed.
 I measured the time to reach 22.57 MPH.  it was 10 seconds.       
 
             
-         
+        
+#### conditional integral
+Integral term is disable when error is the same sign with PID output and it's saturated.
+```bash
+   def step(self, error, sample_time):
+        integral = self.int_val + error * sample_time;
+        derivative = (error - self.last_error) / sample_time;
+
+        if self.integral_on == True:
+            val = self.kp * error + self.ki * integral + self.kd * derivative;
+        else:
+            val = self.kp * error + self.kd * derivative;
+            
+...
+
+        same_sign = (error > 0 and val > 0 ) or (error < 0 and val < 0 )
+
+        if saturated and same_sign: 
+                self.integral_on = False
+        else:
+                self.integral_on = True  #turn on again!
+
+        return val
+```
          
 I just wanna say...           
 "There is a difference between knowing the path and walking the path." – Morpheus(The Matrix 1999)         
