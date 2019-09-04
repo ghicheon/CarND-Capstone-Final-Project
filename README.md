@@ -11,8 +11,8 @@ Haiqi Bian    : bingo_hiqi@live.cn
 David Göndör: gondordavid@gmail.com	     
 Venkat	      :vkarramr@mtu.edu			     
 
+## Requirements
 
-## Requirements 
 * Launch correctly using the launch files provided in the capstone repo. Please note that we will not be able to accommodate special launch instructions or run additional scripts from your submission to download files. The launch/styx.launch and launch/site.launch files will be used to test code in the simulator and on the vehicle respectively. The submission size limit for this project has been increased to 2GB.
 * Smoothly follow waypoints in the simulator.
 * Respect the target top speed set for the waypoints' twist.twist.linear.x in waypoint_loader.py. Be sure to check that this is working by testing with different values for kph velocity parameter in /ros/src/waypoint_loader/launch/waypoint_loader.launch. If your vehicle adheres to the kph target top speed set here, then you have satisfied this requirement.
@@ -21,10 +21,12 @@ Venkat	      :vkarramr@mtu.edu
 * Publish throttle, steering, and brake commands at 50hz.
 
 ## Contributions
+
 ### Traffic light detector (Elle Li)
 detail..... blah blah, blah~~~  
 
 ### Traffic light classifier (Haiqi Bian)
+
 Training the classification by using SSD Inception V2 Coco. There are 2 training results, but only difference is the training batch size. The `.pd` files are located at following path:
 
 * for udacity-simulator (./ros/src/tl_detector/light_classification/model/sim):
@@ -32,7 +34,8 @@ Training the classification by using SSD Inception V2 Coco. There are 2 training
   * ./24_batch/frozen_inference_graph.pb
 * for udacity parking lot (./ros/src/tl_detector/light_classification/model/real):
   * ./8_batch/frozen_inference_graph.pb
-  
+  * ./24_batch/frozen_inference_graph.pb
+
 The path needs to be updated in the traffic light detector part.
 
 ###  DBW node     (David Göndör)
