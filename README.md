@@ -1,15 +1,14 @@
 (under construction)
 
-
 # Late Start But Best Team
 
-
 ## team organization
-Ghicheon Lee  : gebmania@gmail.com   - Team Lead         
-Elle Li	      :zheyuanli99@gmail.com      
-Haiqi Bian    : bingo_hiqi@live.cn			     
-David Göndör: gondordavid@gmail.com	     
-Venkat	      :vkarramr@mtu.edu			     
+
+Ghicheon Lee  : gebmania@gmail.com   - Team Lead
+Elle Li       : zheyuanli99@gmail.com
+Haiqi Bian    : bingo_hiqi@live.cn
+David Göndör  : gondordavid@gmail.com
+Venkat        : vkarramr@mtu.edu
 
 ## Requirements
 
@@ -22,46 +21,55 @@ Venkat	      :vkarramr@mtu.edu
 
 ## Contributions
 
-### Traffic light detector (Elle Li)
-detail..... blah blah, blah~~~  
+### Traffic light detector
+
+The detector is used to:
+
+* find the closest waypoint to the ego vehicle
+* find the closest traffic light
+* call the traffic light classifier
+* if the traffic light is `RED`, publish the waypoint to `/traffic_waypoint` topic
 
 ### Traffic light classifier (Haiqi Bian)
 
-Training the classification by using SSD Inception V2 Coco. There are 2 training results, but only difference is the training batch size. The `.pd` files are located at following path:
+The classifier is used to classify the detected traffic light to 4 categories: `RED`, `GREEN`, `YELLOW` and `OFF`.
+Training the classification by using SSD Inception V2 Coco. There are 2 training results, batch size 8 and batch size 24. The "batch size 24" was trained at AWS EC2 Instance and the "batch size 8" was trained on local PC due to the GPU memory limitation.
+The `.pd` files are located at following path:
 
 * for udacity-simulator (./ros/src/tl_detector/light_classification/model/sim):
   * ./8_batch/frozen_inference_graph.pb
-  * ./24_batch/frozen_inference_graph.pb
+  * ./24_batch/frozen_inference_graph.pb (default)
 * for udacity parking lot (./ros/src/tl_detector/light_classification/model/real):
   * ./8_batch/frozen_inference_graph.pb
-  * ./24_batch/frozen_inference_graph.pb
+  * ./24_batch/frozen_inference_graph.pb (default)
 
-The path needs to be updated in the traffic light detector part.
+### DBW node (David Göndör)
 
-###  DBW node     (David Göndör)
 Made the dbw node to subcribe to the /twist_cmd and use various controllers to provide appropriate throttle, brake, and steering commands.  
 
-### Waypoint updater  (Venkat)
-detail..... blah blah, blah~~~   
+### Waypoint updater (Venkat)
+
+detail..... blah blah, blah~~~
 
 ### pid controller tunning (Ghicheon Lee)
+
 Conditional integral is applied to PID controller.
 FOPDT(first order plus dead-time model) parameters were found.
 IMC(Internal Model Control) tunning is used.
-MPC model was considered (https://github.com/ghicheon/code_snippets) but not used because it's too slow in python.        
+MPC model was considered (https://github.com/ghicheon/code_snippets) but not used because it's too slow in python.
 
+I modified code like following in order to measure FOPDT parameters.
 
-I modified code like following in order to measure FOPDT parameters.              
+* There is no speed limit
 
-* There is no speed limit           
-```bash    
+```bash
 waypoint_loader.launch           
       <param name="velocity" value="100" />          
-```     
+```
 
-         
-* throttle is always 30%.           
-```bash     
+* throttle is always 30%.
+  
+```bash
 twist_controller.py       
    def control(self, current_vel, curr_ang_vel, linear_vel, angular_vel, dbw_enabled):        
         throttle = 0.3      
@@ -69,9 +77,7 @@ twist_controller.py
         ...        
         return throttle, brake, steering     
 ```
-       
- 
-            
+
 #### FOPDT parameters       
 * kp = dy/du = 16/30       
 dy: the maximum speed (m/s) with du   => 16 m/s       
