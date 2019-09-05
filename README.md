@@ -4,11 +4,13 @@
 
 ## team organization
 
-Ghicheon Lee  : gebmania@gmail.com   - Team Lead
-Elle Li       : zheyuanli99@gmail.com
-Haiqi Bian    : bingo_hiqi@live.cn
-David Göndör  : gondordavid@gmail.com
-Venkat        : vkarramr@mtu.edu
+|  Name                                   |  Email Address                    |
+|:---------------------------------------:|:---------------------------------:|
+| Ghicheon Lee (**Team Leader**)          |   gebmania@gmail.com              |
+| Elle Li                                 |  zheyuanli99@gmail.com            |
+| Haiqi Bian                              |   bingo_hiqi@live.cn              |
+| David Göndör                            |   gondordavid@gmail.com           |
+| Venkat                                  |   vkarramr@mtu.edu                |
 
 ## Requirements
 
@@ -134,7 +136,7 @@ This is the project repo for the final project of the Udacity Self-Driving Car N
 
 Please use **one** of the two installation options, either native **or** docker installation.
 
-### Native Installation
+## Native Installation
 
 * Be sure that your workstation is running Ubuntu 16.04 Xenial Xerus or Ubuntu 14.04 Trusty Tahir. [Ubuntu downloads can be found here](https://www.ubuntu.com/download/desktop).
 * If using a Virtual Machine to install Ubuntu, use the following configuration as minimum:
@@ -151,7 +153,7 @@ Please use **one** of the two installation options, either native **or** docker 
   * Use this option to install the SDK on a workstation that already has ROS installed: [One Line SDK Install (binary)](https://bitbucket.org/DataspeedInc/dbw_mkz_ros/src/81e63fcc335d7b64139d7482017d6a97b405e250/ROS_SETUP.md?fileviewer=file-view-default)
 * Download the [Udacity Simulator](https://github.com/udacity/CarND-Capstone/releases).
 
-### Docker Installation
+## Docker Installation
 [Install Docker](https://docs.docker.com/engine/installation/)
 
 Build the docker container
@@ -164,10 +166,10 @@ Run the docker file
 docker run -p 4567:4567 -v $PWD:/capstone -v /tmp/log:/root/.ros/ --rm -it capstone
 ```
 
-### Port Forwarding
+## Port Forwarding
 To set up port forwarding, please refer to the "uWebSocketIO Starter Guide" found in the classroom (see Extended Kalman Filter Project lesson).
 
-### Usage
+## Usage
 
 1. Clone the project repository
 ```bash
@@ -188,7 +190,7 @@ roslaunch launch/styx.launch
 ```
 4. Run the simulator
 
-### Real world testing
+## Real world testing
 1. Download [training bag](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/traffic_light_bag_file.zip) that was recorded on the Udacity self-driving car.
 2. Unzip the file
 ```bash
@@ -205,7 +207,7 @@ roslaunch launch/site.launch
 ```
 5. Confirm that traffic light detection works on real life images
 
-### Other library/driver information
+## Other library/driver information
 Outside of `requirements.txt`, here is information on other driver/library versions used in the simulator and Carla:
 
 Specific to these libraries, the simulator grader and Carla use the following:
