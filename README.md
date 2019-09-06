@@ -68,10 +68,10 @@ waypoint_loader.launch
   
 ```bash
 twist_controller.py       
-   def control(self, current_vel, curr_ang_vel, linear_vel, angular_vel, dbw_enabled):        
+   def control(self, current_vel, curr_ang_vel, linear_vel, angular_vel, dbw_enabled):     
+        ...
         throttle = 0.3      
-        brake = 0      
-        ...        
+        brake = 0        
         return throttle, brake, steering     
 ```
 
