@@ -133,8 +133,8 @@ Integral term is disable when error is the same sign with PID output and it's sa
         return val
 ```
 #### References
-FOPDT & IMC reference                     
-http://apmonitor.com/pdc/index.php/Main/SpeedControl   
+FOPDT & IMC reference                
+http://apmonitor.com/pdc/index.php/Main/FirstOrderSystems 
 
 conditional integral reference              
 https://www.youtube.com/watch?v=NVLXCwc8HzM&list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y&index=2           
