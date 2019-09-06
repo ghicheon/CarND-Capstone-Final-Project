@@ -6,9 +6,9 @@
 |:---------------------------------------:|:---------------------------------:|
 | Ghicheon Lee (**Team Leader**)          |   gebmania@gmail.com              |
 | Elle Li                                 |  zheyuanli99@gmail.com            |
-| Haiqi Bian                              |   bingo_hiqi@live.cn              |
+| Haiqi Bian                              |   bingo.hiqi@gmail.com            |
 | David Göndör                            |   gondordavid@gmail.com           |
-| Venkat                                  |   vkarramr@mtu.edu                |
+| Venkat Sai Raxit Karramreddy            |   vkarramr@mtu.edu                |
 
 ## Requirements
 
