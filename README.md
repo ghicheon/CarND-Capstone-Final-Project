@@ -1,5 +1,3 @@
-(under construction)
-
 # Late Start But Best Team
 
 ## team organization
@@ -53,7 +51,7 @@ Made the dbw node to subcribe to the /twist_cmd and use various controllers to p
 
 detail..... blah blah, blah~~~
 
-### pid controller tunning (Ghicheon Lee)
+### PID controller tunning (Ghicheon Lee)
 
 Conditional integral was applied to PID controller.         
 FOPDT(first order plus dead-time model) parameters were found. IMC(Internal Model Control) tunning was used.               
@@ -113,7 +111,7 @@ In conclusion,  P parameter is 1/K_p = 1/(16/30) = 30/16    and I parameter is K
 After getting IMC tunning values, I tried to find more accurate values manually.   
             
         
-#### conditional integral
+#### Conditional integral
 Integral term is disable when error is the same sign with PID output and it's saturated.     
 ```python
    def step(self, error, sample_time):
@@ -143,7 +141,7 @@ http://apmonitor.com/pdc/index.php/Main/SpeedControl
 conditional integral reference              
 https://www.youtube.com/watch?v=NVLXCwc8HzM&list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y&index=2           
 
-#### epilogue          
+#### Epilogue          
 I just wanna say...           
 "There is a difference between knowing the path and walking the path." – Morpheus(The Matrix 1999)         
         
