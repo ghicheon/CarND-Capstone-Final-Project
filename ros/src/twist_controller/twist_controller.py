@@ -8,7 +8,7 @@ GAS_DENSITY = 2.858
 ONE_MPH= 0.44704
 
 #to drive slowly when start. if not, sometimes the car miss the traffic light.
-BASE_VEL=0.3
+BASE_VEL=0.2
 throttle_for_slowstart = [BASE_VEL ,BASE_VEL*2 ,BASE_VEL*3 ,BASE_VEL*4 ,BASE_VEL*5,BASE_VEL*6,BASE_VEL*7]
 
 
