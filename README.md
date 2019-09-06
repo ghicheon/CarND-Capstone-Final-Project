@@ -55,21 +55,20 @@ detail..... blah blah, blah~~~
 
 ### pid controller tunning (Ghicheon Lee)
 
-Conditional integral is applied to PID controller.
-FOPDT(first order plus dead-time model) parameters were found.
-IMC(Internal Model Control) tunning is used.
-MPC model was considered (https://github.com/ghicheon/code_snippets) but not used because it's too slow in python.
+Conditional integral was applied to PID controller.         
+FOPDT(first order plus dead-time model) parameters were found. IMC(Internal Model Control) tunning was used.               
+MPC model was considered (https://github.com/ghicheon/code_snippets) but not used because it's too slow in python.     
 
-I modified code like following in order to measure FOPDT parameters.
+I modified code like following in order to measure FOPDT parameters.             
 
-* There is no speed limit
+* There is no speed limit       
 
 ```bash
 waypoint_loader.launch           
       <param name="velocity" value="100" />          
 ```
 
-* throttle is always 30%.
+* throttle is always 30%.             
   
 ```bash
 twist_controller.py       
@@ -81,28 +80,42 @@ twist_controller.py
 ```
 
 #### FOPDT parameters       
-* kp = dy/du = 16/30       
+* K_p = dy/du = 16/30       
 dy: the maximum speed (m/s) with du   => 16 m/s       
 du: the throttle %                               => 30%       
      
-The maximum speed is 35.84 miles/hour. it's 57.67 km/hour. it's also 16 meters/second      
+The maximum speed is 35.84 miles/hour. it's 57.67 km/hour. it's also 16 meters/second       
 The throttle is 30%         
              
-* theta_p = 0
-How long does it take the car to response. It must be close to 0 in modern cars.       
+* theta_p = 0   
+How long does it take the car to response. It must be close to 0 in modern cars.        
    
-* tau_p = 10                
-How long does it take the car to reach the 63% of the maximum speed.         
+* tau_p = 10                 
+How long does it take the car to reach the 63% of the maximum speed.            
       
-35.84 * 0.63 = 22.57 miles/hour       
+35.84 * 0.63 = 22.57 miles/hour        
      
-I measured the time to reach 22.57 MPH.  it was 10 seconds.       
+I measured the time to reach 22.57 MPH.  it was 10 seconds.        
 
+#### IMC Moderate Tunning  
+P: K_c   
+I: K_c/tau_I    
+D: K_c * tau_D   
+
+We're going to use PI parameters.     
+K_c = 1/K_p        
+
+tau_c = 1.0 * tau_p     
+tau_I = tau_p   
+K_c/tau_I = K_c / tau_p     
+
+In conclusion,  P parameter is 1/K_p = 1/(16/30) = 30/16    and I parameter is K_c/tau_p = (30/16)/10.
+After getting IMC tunning values, I tried to find more accurate values manually.   
             
         
 #### conditional integral
-Integral term is disable when error is the same sign with PID output and it's saturated.
-```bash
+Integral term is disable when error is the same sign with PID output and it's saturated.     
+```python
    def step(self, error, sample_time):
         integral = self.int_val + error * sample_time;
         derivative = (error - self.last_error) / sample_time;
@@ -112,7 +125,7 @@ Integral term is disable when error is the same sign with PID output and it's sa
         else:
             val = self.kp * error + self.kd * derivative;
             
-...
+        ...
 
         same_sign = (error > 0 and val > 0 ) or (error < 0 and val < 0 )
 
