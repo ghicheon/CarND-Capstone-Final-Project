@@ -135,6 +135,7 @@ Integral term is disable when error is the same sign with PID output and it's sa
 #### References
 FOPDT & IMC reference                
 http://apmonitor.com/pdc/index.php/Main/FirstOrderSystems 
+https://www.youtube.com/watch?v=k46nCvOBllA&t=340s
 
 conditional integral reference              
 https://www.youtube.com/watch?v=NVLXCwc8HzM&list=PLn8PRpmsu08pQBgjxYFXSsODEF3Jqmm-y&index=2           
