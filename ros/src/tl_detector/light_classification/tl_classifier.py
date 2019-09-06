@@ -3,6 +3,8 @@ import tensorflow as tf
 import numpy as np
 import datetime
 
+import sys
+
 class TLClassifier(object):
     def __init__(self, is_sim):
 
@@ -12,7 +14,7 @@ class TLClassifier(object):
             PATH_TO_GRAPH = r'light_classification/model/real/24_batch/frozen_inference_graph.pb'
 
         self.graph = tf.Graph()
-        self.threshold = .5
+        self.threshold = .2
 
         with self.graph.as_default():
             od_graph_def = tf.GraphDef()
@@ -47,24 +49,24 @@ class TLClassifier(object):
                 feed_dict={self.image_tensor: img_expand})
             end = datetime.datetime.now()
             c = end - start
-            print(c.total_seconds())
+            #print(c.total_seconds())
 
         boxes = np.squeeze(boxes)
         scores = np.squeeze(scores)
         classes = np.squeeze(classes).astype(np.int32)
 
-        print('SCORES: ', scores[0])
-        print('CLASSES: ', classes[0])
+        #print('SCORES: ', scores[0])
+        #print('CLASSES: ', classes[0])
 
         if scores[0] > self.threshold:
             if classes[0] == 1:
-                print('GREEN')
+                sys.stderr.write('GREEN   ' + str(scores[0])  +  '     CLASSES: ' +  str(classes[0])  + '\n' )
                 return TrafficLight.GREEN
             elif classes[0] == 2:
-                print('RED')
+                sys.stderr.write('RED     ' + str(scores[0])  +  '     CLASSES: ' +  str(classes[0])  + '\n' )
                 return TrafficLight.RED
             elif classes[0] == 3:
-                print('YELLOW')
+                sys.stderr.write('YELLOW  ' + str(scores[0])  +  '     CLASSES: ' +  str(classes[0])  + '\n' )
                 return TrafficLight.YELLOW
 
         return TrafficLight.UNKNOWN
