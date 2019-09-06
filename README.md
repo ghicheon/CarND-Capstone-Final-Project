@@ -49,8 +49,6 @@ Made the dbw node to subcribe to the /twist_cmd and use various controllers to p
 
 ### Waypoint updater (Venkat)
 
-detail..... blah blah, blah~~~
-
 ### PID controller tunning (Ghicheon Lee)
 
 Conditional integral was applied to PID controller.         
