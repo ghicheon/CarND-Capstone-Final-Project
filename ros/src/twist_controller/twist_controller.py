@@ -74,9 +74,9 @@ class Controller(object):
             brake = abs(decel) * (self.vehicle_mass + GAS_DENSITY * self.fuel_capacity) * self.wheel_radius
 
         # current_vel is m/s. therefore 5m/s is around 20 km/h
-        vel_idx = int(current_vel)
-        if vel_idx < 7 :    
-            limit  = throttle_for_slowstart[vel_idx]
-            throttle = limit if current_vel > limit else current_vel
+        #vel_idx = int(current_vel)
+        #if vel_idx < 7 :    
+        #    limit  = throttle_for_slowstart[vel_idx]
+        #    throttle = limit if current_vel > limit else current_vel
 
         return throttle, brake, steering
